@@ -1,42 +1,96 @@
 <!DOCTYPE html>
 <html>
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
-
 <head>
-  <meta charset="UTF-8">
-  <title>ML API</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-
+  <title>CHD Prediction</title>
+  <style>
+   header{
+     background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('static/background.jpg');
+     height: 100vh;
+     background-size: cover;
+     background-position: center;
+   }
+   ul{ 
+   width: 500%;
+   }
+   body {
+     font-family: Arial, Helvetica, sans-serif;
+     background-color: #CCFFCC;
+   
+   }
+   
+   /* Full-width input fields */
+   input[type=text], input[type=password] {
+     float: center;
+     width: 25%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+   }
+   
+   /* Set a style for all buttons */
+   button {
+     position: absolute;
+       top: 105%;
+     background-color: #4CAF50;
+     color: white;
+     padding: 14px 20px;
+     margin: 8px 0;
+     border: none;
+     cursor: pointer;
+     width: 50%;
+     float: center;
+   }
+   h3 {
+   background-color: red;
+   margin-left: 5rem;
+   padding: 1rem;
+   }
+   
+   
+   </style>
+  <img src="{{url_for('static', filename='header.jpg')}}" height="200" width="100%">
 </head>
-
 <body>
-  <div class="login">
-    <h1>Heart Disease Risk Assessment</h1>
+
+<table width="100%" height="100%" bgcolor="white">
+    <tr>
+      <td width="100%" height="20" bgcolor="lightblue"> <marquee onmouseover="stop()" onmouseout="start()">Heart Disease Risk Assesment </marquee></td>
+    </tr>
+  </table>
+  <header>
+    
+      <div class="login">
+
+     
+    <table >
+      <tr>
+        <td width="25%" height="100">
+        </td>
+        <td width="50%" height="100">
 
     <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}" method="post">
-      <input type="text" name="age" placeholder="Age" required="required" />
-      <input type="text" name="totChol" placeholder="Total Cholestrol" required="required" />
-      <input type="text" name="sysBP" placeholder="Systolic BP" required="required" />
-      <input type="text" name="diaBP" placeholder="Diabolic BP" required="required" />
-      <input type="text" name="BMI" placeholder="B.M.I" required="required" />
-      <input type="text" name="heartRate" placeholder="Heart Rate" required="required" />
-      <input type="text" name="glucose" placeholder="Glucose" required="required" />
+    <ul >
+     <li> <input type="text" name="age" placeholder="Age" required="required" /></li>
+     <li> <input type="text" name="totChol" placeholder="Total Cholestrol" required="required" /></li>
+     <li> <input type="text" name="sysBP" placeholder="Systolic BP" required="required" /></li>
+     <li> <input type="text" name="diaBP" placeholder="Diabolic BP" required="required" /></li>
+     <li> <input type="text" name="BMI" placeholder="B.M.I" required="required" /></li>
+     <li> <input type="text" name="heartRate" placeholder="Heart Rate" required="required" /></li>
+     <li> <input type="text" name="glucose" placeholder="Glucose" required="required" /></li>
 
-
-      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </ul>
+     <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> 
+     <h3>{{ prediction_text }}</h3> 
     </form>
-
-    <br>
-    <br>
-    {{ prediction_text }}
-
-  </div>
-
-
-</body>
-
-</html>
+      </td>  
+      <td width="25%" height="100">
+            
+      </td>
+    </table>
+    </div>
+    
+</head>
+<body>
