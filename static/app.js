@@ -15,7 +15,7 @@ document.getElementById('submit').addEventListener('submit', function(e){
 function display() {
  document.getElementById('loading').style.display = 'none'
  document.getElementById('submit').style.display = "block"
- //document.getElementById('results').style.display = 'block'
+ document.getElementById('results').style.display = 'block'
  //var node = document.createElement("p");                 
  //var textnode = document.createTextNode({{ prediction_text }});         
  //node.appendChild(textnode);                              
