@@ -15,6 +15,10 @@ document.getElementById('submit').addEventListener('submit', function(e){
 function display() {
  document.getElementById('loading').style.display = 'none'
  document.getElementById('results').style.display = 'block'
+ var node = document.createElement("p");                 
+ var textnode = document.createTextNode({{ prediction_text }});         
+ node.appendChild(textnode);                              
+ document.getElementById("results").appendChild(node);     
  document.querySelector(".input").readOnly = true
  document.getElementById('submit').style.display = "block"
  document.querySelector('.submit').style.display = 'none'
