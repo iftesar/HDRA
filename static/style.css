@@ -7,7 +7,7 @@ body {
   overflow: hidden;
 }
 
-.form {
+.form-container {
   background-color: #15172b;
   border-radius: 20px;
   margin-top: 20px;
@@ -159,7 +159,7 @@ body {
 #results,
 .reset {
   margin-top: 20px;
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
 
 .reset {

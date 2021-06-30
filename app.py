@@ -25,10 +25,11 @@ def predict():
     prediction = model.predict(final_features)
 
     output = prediction[0]
+    print(output)
     if output == 1:
-        return render_template('index.html', prediction_text='CHD risk is there')
+        return render_template('index.html', prediction_text='CHD risk is there', test="true")
     elif output == 0:
-        return render_template('index.html', prediction_text='CHD risk is not there')
+        return render_template('index.html', prediction_text='CHD risk is not there', test="false")
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -16,7 +16,7 @@ import seaborn as sns
 import pickle
 #%matplotlib inline
 #load the data
-data = pd.read_csv('C:/Users/Iftesar/Desktop/FinalYearProject/framingham.csv')
+data = pd.read_csv('./data/framingham.csv')
 data.drop(['education'],axis=1,inplace=True) #Education has no correlation with heart disease
 data.head()
 
