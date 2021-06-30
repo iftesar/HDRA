@@ -113,11 +113,16 @@
           <label for="glucose" class="place">Glucose</label>
         </div>
         <input type="submit" value="predict" class="submit" />
-        <input type="reset" value="predict again" class="reset" />
+        <input
+          type="reset"
+          value="predict again"
+          class="reset"
+          style="margin-top: 2rem"
+        />
         <!-- <button type="number" id="submit" class="submit">predict</button> -->
       </form>
       <div id="results">
-        <h3>" {{ prediction_text }} "</h3>
+        <h3 style="color: {{ color }};">{{ prediction_text }}</h3>
       </div>
     </div>
 
