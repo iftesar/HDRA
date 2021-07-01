@@ -32,4 +32,4 @@ def predict():
         return render_template('index.html', prediction_text='CHD risk is not there', color="green")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
