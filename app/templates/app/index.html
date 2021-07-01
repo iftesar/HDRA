@@ -1,17 +1,12 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
-    <link
-      rel="shortcut icon"
-      href="{{ url_for('static', filename='favicon.ico') }}"
-    />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
     <script
       src="https://kit.fontawesome.com/6d75087f93.js"
       crossorigin="anonymous"
@@ -20,12 +15,8 @@
   </head>
   <body>
     <div class="form-container">
-      <form
-        action="{{ url_for('predict')}}"
-        method="post"
-        class="form"
-        id="submit"
-      >
+      <form action="{% url 'predict' %}" method="POST" class="form">
+        {% csrf_token %}
         <div class="title">Welcome</div>
         <div class="subtitle">Let's check your health</div>
         <div class="input-container ic1">
@@ -132,6 +123,6 @@
       <br /><br />
       <i class="fas fa-spinner fa-8x"></i>
     </div>
-    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="{% static 'app.js' %}"></script>
   </body>
 </html>
