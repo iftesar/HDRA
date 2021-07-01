@@ -1,5 +1,5 @@
 // Listen for Submit
-document.getElementById("submit").addEventListener("submit", function (e) {
+document.querySelector(".submit").addEventListener("click", function (e) {
   // Hide Results
   //document.getElementById('results').style.display = 'none'
   document.querySelector(".form-container").style.display = "none";
@@ -28,6 +28,6 @@ function display() {
   document.querySelector(".form-container").style.height = "675px";
 }
 
-document.getElementById("submit").addEventListener("reset", function (e) {
-  window.location.reload();
+document.querySelector(".reset").addEventListener("click", function (e) {
+  document.location.href = "/";
 });
