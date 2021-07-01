@@ -107,7 +107,7 @@
             type="number"
             name="glucose"
             placeholder=" "
-            required="required"
+            required="require`d"
           />
           <div class="cut"></div>
           <label for="glucose" class="place">Glucose</label>
@@ -119,7 +119,6 @@
           class="reset"
           style="margin-top: 2rem"
         />
-        <!-- <button type="number" id="submit" class="submit">predict</button> -->
       </form>
       <div id="results">
         <h3 style="color: {{ color }};">{{ prediction_text }}</h3>
@@ -133,5 +132,9 @@
       <i class="fas fa-spinner fa-8x"></i>
     </div>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script>
+      console.log("{{prediction_text}}");
+      myValue("{{prediction_text}}", "{{ val }}");
+    </script>
   </body>
 </html>

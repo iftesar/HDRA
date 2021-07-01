@@ -27,9 +27,9 @@ def predict():
     output = prediction[0]
     print(output)
     if output == 1:
-        return render_template('index.html', prediction_text='CHD risk is there', color="red")
+        return render_template('index.html', prediction_text='CHD risk is there', color="red", val=int_features)
     elif output == 0:
-        return render_template('index.html', prediction_text='CHD risk is not there', color="green")
+        return render_template('index.html', prediction_text='CHD risk is not there', color="green", val=int_features)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(debug=True)
